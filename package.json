@@ -1,0 +1,27 @@
+{
+  "name": "lampshade-tubular",
+  "version": "1.0.0",
+  "description": "UT Bootcamp Project 2 - Travel Log",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/asjohnson8735/lampshade-tubular.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/asjohnson8735/lampshade-tubular/issues"
+  },
+  "homepage": "https://github.com/asjohnson8735/lampshade-tubular#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "handlebars": "^4.7.7",
+    "mysql2": "^3.3.1",
+    "sequelize": "^6.31.1"
+  }
+}
