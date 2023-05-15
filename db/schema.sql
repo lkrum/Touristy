@@ -1,2 +1,2 @@
-DROP DATABASE IF EXISTS tbdName_db;
+DROP DATABASE IF EXISTS touristy_db;
 CREATE DATABASE tbdName_db_db;
