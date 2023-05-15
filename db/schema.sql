@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS tbdName_db;
+CREATE DATABASE tbdName_db_db;
