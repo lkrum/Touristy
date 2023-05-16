@@ -16,28 +16,28 @@ Post.init(
     },
     user_id: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      allowNull: true,
       references: {
         model: 'user',
         key: 'id',
       },
     },
-    trip_id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      references: {
-        model: 'trip',
-        key: 'id',
-      },
-    },
-    image_id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      references: {
-        model: 'image',
-        key: 'id',
-      },
-    },
+    // trip_id: {
+    //   type: DataTypes.INTEGER,
+    //   allowNull: false,
+    //   references: {
+    //     model: 'trip',
+    //     key: 'id',
+    //   },
+    // },
+    // image_id: {
+    //   type: DataTypes.INTEGER,
+    //   allowNull: false,
+    //   references: {
+    //     model: 'image',
+    //     key: 'id',
+    //   },
+    // },
   },
   {
     sequelize,
