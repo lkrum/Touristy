@@ -1,32 +1,42 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Post extends Model { }
+class Trip extends Model { }
 
-Post.init(
+Trip.init(
   {
     id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true,
     },
-    description: {
-      type: DataTypes.STRING,
-      allowNull: true,
+    destination: {
+      type: DataTypes.TEXT,
+      allowNull: false,
+    },
+    trip_start: {
+      type: DataTypes.DATE,
+      allowNull: false,
+    },
+    trip_end: {
+      type: DataTypes.DATE,
+      allowNull: false,
+    },
+    created_at: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      defaultValue: DataTypes.NOW,
+    },
+    updated_at: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      defaultValue: DataTypes.NOW,
     },
     user_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
         model: 'user',
-        key: 'id',
-      },
-    },
-    trip_id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      references: {
-        model: 'trip',
         key: 'id',
       },
     },
@@ -38,14 +48,22 @@ Post.init(
         key: 'id',
       },
     },
+    post_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: 'post',
+        key: 'id',
+      },
+    },
   },
   {
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'post',
+    modelName: 'trip',
   }
 );
 
-module.exports = Post;
+module.exports = Trip;
