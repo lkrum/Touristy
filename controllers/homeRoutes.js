@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Post, User } = require('../models');
+const { Trip, User } = require('../models');
 const withAuth = require('../utils/auth');
 
 // add routes below
@@ -22,7 +22,7 @@ router.get('/', async (req, res) => {
 
     // Pass serialized data and session flag into template
     res.render('homepage', {
-      projects,
+      trips,
       logged_in: req.session.logged_in
     });
   } catch (err) {
@@ -33,7 +33,7 @@ router.get('/', async (req, res) => {
 // getting trips by id
 router.get('/trip/:id', async (req, res) => {
   try {
-    const projectData = await Project.findByPk(req.params.id, {
+    const tripData = await Trip.findByPk(req.params.id, {
       include: [
         {
           model: User,
@@ -42,17 +42,19 @@ router.get('/trip/:id', async (req, res) => {
       ],
     });
 
-    const project = projectData.get({ plain: true });
+    const trip = tripData.get({ plain: true });
 
     // rendering handlebars data
-    res.render('post', {
-      ...post,
+    res.render('trip', {
+      ...trip,
       logged_in: req.session.logged_in
     });
   } catch (err) {
     res.status(500).json(err);
   }
 });
+
+// 
 
 // Use withAuth middleware to prevent access to route
 router.get('/profile', withAuth, async (req, res) => {
@@ -78,7 +80,7 @@ router.get('/profile', withAuth, async (req, res) => {
 router.get('/login', (req, res) => {
   // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
-    res.redirect('/profile');
+    res.redirect('/trip');
     return;
   }
 
