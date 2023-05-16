@@ -1,39 +1,63 @@
 const router = require('express').Router();
-const { Trip } = require('../../models');
+const { Post } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-// route for adding an new trip
+// route for adding a new post
 router.post('/', withAuth, async (req, res) => {
   try {
-    const newTrip = await Trip.create({
+    const newPost = await Post.create({
       ...req.body,
       user_id: req.session.user_id,
     });
 
-    res.status(200).json(newTrip);
+    res.status(200).json(newPost);
   } catch (err) {
     res.status(400).json(err);
   }
 });
 
+// route for updating a post by id
+router.put('/:id', async (req, res) => {
+  try {
+    const postData = await Post.update(
+      {
+        // all of the info that a user could update
 
+      },
+      {
+        // Gets the trips based on the id given in the request parameters
+        where: {
+          id: req.params.id,
+        },
+      }
+    )
+    // have to start index at 0 even though our ids start at 1 because that's how Javascript indexes
+    if (!postData[0]) {
+      res.status(404).json({ message: 'No post found with this id!' });
+      return;
+    }
+    res.status(200).json(postData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
 // route for deleting a trip by id
 router.delete('/:id', withAuth, async (req, res) => {
   try {
-    const tripData = await Trip.destroy({
+    const postData = await Post.destroy({
       where: {
         id: req.params.id,
         user_id: req.session.user_id,
       },
     });
 
-    if (!tripData) {
-      res.status(404).json({ message: 'No trip found with this id!' });
+    if (!postData) {
+      res.status(404).json({ message: 'No post found with this id!' });
       return;
     }
 
-    res.status(200).json(tripData);
+    res.status(200).json(postData);
   } catch (err) {
     res.status(500).json(err);
   }
