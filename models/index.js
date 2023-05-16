@@ -4,7 +4,17 @@ const Image = require('./image');
 const Post = require('./post');
 
 // user relationships
-User.hasMany(Trip, Image, Post, {
+User.hasMany(Trip, {
+  foreignKey: 'user_id',
+  onDelete: 'CASCADE'
+});
+
+User.hasMany(Image, {
+  foreignKey: 'user_id',
+  onDelete: 'CASCADE'
+});
+
+User.hasMany(Post, {
   foreignKey: 'user_id',
   onDelete: 'CASCADE'
 });
