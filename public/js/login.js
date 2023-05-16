@@ -1,5 +1,4 @@
-// example taken from activities
-
+// user log in functionality
 const loginFormHandler = async (event) => {
   event.preventDefault();
 
@@ -24,17 +23,18 @@ const loginFormHandler = async (event) => {
   }
 };
 
+// user sign-up functionality
 const signupFormHandler = async (event) => {
   event.preventDefault();
 
-  const name = document.querySelector('#name-signup').value.trim();
+  const userName = document.querySelector('#name-signup').value.trim();
   const email = document.querySelector('#email-signup').value.trim();
   const password = document.querySelector('#password-signup').value.trim();
 
-  if (name && email && password) {
+  if (userName && email && password) {
     const response = await fetch('/api/users', {
       method: 'POST',
-      body: JSON.stringify({ name, email, password }),
+      body: JSON.stringify({ userName, email, password }),
       headers: { 'Content-Type': 'application/json' },
     });
 

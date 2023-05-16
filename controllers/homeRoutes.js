@@ -4,20 +4,21 @@ const withAuth = require('../utils/auth');
 
 // add routes below
 
+// home route for trips
 router.get('/', async (req, res) => {
   try {
-    // Get all posts and JOIN with user data
-    const projectData = await Project.findAll({
+    // Get all trip data and JOIN with user data
+    const tripData = await Trip.findAll({
       include: [
         {
           model: User,
-          attributes: ['name'],
+          attributes: ['username'],
         },
       ],
     });
 
     // Serialize data so the template can read it
-    const projects = projectData.map((project) => project.get({ plain: true }));
+    const trips = tripData.map((trip) => trip.get({ plain: true }));
 
     // Pass serialized data and session flag into template
     res.render('homepage', {
@@ -29,8 +30,8 @@ router.get('/', async (req, res) => {
   }
 });
 
-// getting posts by id
-router.get('/post/:id', async (req, res) => {
+// getting trips by id
+router.get('/trip/:id', async (req, res) => {
   try {
     const projectData = await Project.findByPk(req.params.id, {
       include: [

@@ -1,37 +1,39 @@
 const router = require('express').Router();
-const {  } = require('../../models');
-const withAuth = require('../../utils/auth');
+const { Trip } = require('../models');
+const withAuth = require('../utils/auth');
 
 // add routes below
 
+// route for adding an new trip
 router.post('/', withAuth, async (req, res) => {
   try {
-    const newProject = await Project.create({
+    const newTrip = await Trip.create({
       ...req.body,
       user_id: req.session.user_id,
     });
 
-    res.status(200).json(newProject);
+    res.status(200).json(newTrip);
   } catch (err) {
     res.status(400).json(err);
   }
 });
 
+// route for deleting a trip by id
 router.delete('/:id', withAuth, async (req, res) => {
   try {
-    const projectData = await Project.destroy({
+    const tripData = await Trip.destroy({
       where: {
         id: req.params.id,
         user_id: req.session.user_id,
       },
     });
 
-    if (!projectData) {
-      res.status(404).json({ message: 'No project found with this id!' });
+    if (!tripData) {
+      res.status(404).json({ message: 'No trip found with this id!' });
       return;
     }
 
-    res.status(200).json(projectData);
+    res.status(200).json(tripData);
   } catch (err) {
     res.status(500).json(err);
   }
