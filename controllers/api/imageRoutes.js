@@ -22,7 +22,7 @@ router.put('/:id', async (req, res) => {
     const imageData = await Image.update(
       {
         // all of the info that a user could update
-       
+        filename: req.body.filename
       },
       {
         // Gets the trips based on the id given in the request parameters

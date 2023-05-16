@@ -22,7 +22,7 @@ router.put('/:id', async (req, res) => {
     const postData = await Post.update(
       {
         // all of the info that a user could update
-
+        description: req.body.description,
       },
       {
         // Gets the trips based on the id given in the request parameters
