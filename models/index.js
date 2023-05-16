@@ -6,6 +6,7 @@ User.hasMany(Trip, {
   onDelete: 'CASCADE' 
 });
 
-Trip.belongsTo(User, { foreignKey: 'user_id' });
+Trip.belongsTo(User, { 
+  foreignKey: 'user_id' });
 
 module.exports = { User, Trip };

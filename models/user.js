@@ -1,7 +1,6 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection'); // replace with your actual path to the sequelize instance
 const bcrypt = require('bcryptjs');
-const Trip = require('./trip');
 
 class User extends Model {
   checkPassword(loginPw) {
