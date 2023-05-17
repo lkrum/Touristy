@@ -29,8 +29,6 @@ router.get('/', withAuth, async (req, res) => {
   }
 });
 
-
-
 // GET route for trips by id
 router.get('/trip/:id', withAuth, async (req, res) => {
   try {
@@ -59,21 +57,25 @@ router.get('/trip/:id', withAuth, async (req, res) => {
 router.get('/image', async (req, res) => {
   try {
     // Get all image data and JOIN with user data
-    // const imageData = await Image.findAll({
-    //   include: [
-    //     {
-    //       model: User,
-    //       attributes: ['username'],
-    //     },
-    //   ],
-    // });
+    const imageData = await Image.findAll({
+      include: [
+        {
+          model: User,
+          attributes: ['username'],
+        },
+        // {
+        //   model: Image,
+        //   attributes: ['filename'],
+        // },
+      ],
+    });
 
-    // // Serialize data so the template can read it
-    // const images = imageData.map((image) => image.get({ plain: true }));
+    // Serialize data so the template can read it
+    const images = imageData.map((image) => image.get({ plain: true }));
 
     // Pass serialized data and session flag into template
     res.render('gallery', {
-      // images,
+      images,
       logged_in: req.session.logged_in
     });
   } catch (err) {
