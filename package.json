@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/asjohnson8735/lampshade-tubular#readme",
   "dependencies": {
+    "@googlemaps/js-api-loader": "^1.15.1",
     "bcryptjs": "^2.4.3",
     "connect-session-sequelize": "^7.1.6",
     "dotenv": "^16.0.3",
