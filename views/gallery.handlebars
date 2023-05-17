@@ -1,25 +1,8 @@
-    {{!-- <section> 
-        <img>
-    </section>
-
-    <section> 
-        <img>
-    </section>
-
-    <section> 
-        <img>
-    </section>
-
-    <section> 
-        <img>
-    </section>
-
-    <section> 
-        <img>
-    </section>
-
-    <section> 
-        <img>
-    </section> --}}
-
-    <h1>image page</h1>
+<section class="gallery-container">
+<h1>Gallery</h1>
+<section class="flex-row justify-center">
+    {{#each images as |galleryImages|}}
+    {{> gallery-images}}
+    {{/each}}
+</section>
+</section>
