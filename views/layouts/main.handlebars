@@ -5,7 +5,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Touristy</title>
-  <link rel="stylesheet" href="/css/jass.css">
   <link rel="stylesheet" href="/css/style.css">
 </head>
 
@@ -15,14 +14,21 @@
       <nav> 
         <h1>Touristy</h1>
         <a href="/">Home</a>
+      Walker
+        {{!-- don't have a bio route yet, will add later --}}
+        {{!-- <a href="#">Bio</a> --}}
+        {{!-- <a href="/image">Image Gallery</a>
+        <a href="/post">Posts</a> --}}
+=======
         {{!-- don't have a profile route yet, will add later --}}
         <a href="#">Profile</a>
         <a href="/image">Image Gallery</a>
         <a href="/post">Posts</a>
+      main
         {{#if logged_in}}
         <button id="logout" class="btn-no-style">Logout</button>
         {{else}}
-        <a href="/login">Login</a>
+        {{!-- <a href="/login">Login</a> --}}
         {{/if}}
       </nav>
      
