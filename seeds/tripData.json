@@ -1,0 +1,13 @@
+  [
+    {
+      "id": 1,
+      "destination": "Europe",
+      "user_id": 1,
+      "image_id": 1
+    },
+    { "id": 2,
+      "destination": "Japan",
+      "user_id": 1,
+      "image_id": 1
+    }
+  ]
