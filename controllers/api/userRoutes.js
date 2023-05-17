@@ -8,11 +8,12 @@ router.post('/', async (req, res) => {
       email: req.body.email,
       password: req.body.password,
     });
-
+    console.log(req.body)
+    
     req.session.save(() => {
       req.session.user_id = userData.id;
       req.session.logged_in = true;
-
+      
       res.status(200).json(userData);
     });
   } catch (err) {
