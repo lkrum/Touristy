@@ -1,5 +1,5 @@
 {
-  "name": "lampshade-tubular",
+  "name": "touristy",
   "version": "1.0.0",
   "description": "UT Bootcamp Project 2 - Travel Log",
   "main": "server.js",
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/asjohnson8735/lampshade-tubular.git"
+    "url": "git+https://github.com/asjohnson8735/Touristy.git"
   },
   "keywords": [],
   "author": "",
