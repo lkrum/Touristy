@@ -4,7 +4,7 @@ const withAuth = require('../utils/auth');
 
 // GET route for all trips
 // using WithAuth so unauthorized users cannot access data
-router.get('/', async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
   try {
     // Get all trip data and JOIN with user data
     const tripData = await Trip.findAll({
