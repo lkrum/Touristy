@@ -7,13 +7,15 @@ Trip.init(
   {
     id: {
       type: DataTypes.INTEGER,
+      allowNull: false,
       primaryKey: true,
       autoIncrement: true,
     },
     destination: {
-      type: DataTypes.TEXT,
+      type: DataTypes.STRING,
       allowNull: false,
     },
+    // changing values to allownull true for testing purposes
     trip_start: {
       type: DataTypes.DATE,
       allowNull: false,
@@ -24,12 +26,12 @@ Trip.init(
     },
     created_at: {
       type: DataTypes.DATE,
-      allowNull: false,
+      allowNull: true,
       defaultValue: DataTypes.NOW,
     },
     updated_at: {
       type: DataTypes.DATE,
-      allowNull: false,
+      allowNull: true,
       defaultValue: DataTypes.NOW,
     },
     user_id: {
@@ -42,7 +44,7 @@ Trip.init(
     },
     image_id: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      allowNull: true,
       references: {
         model: 'image',
         key: 'id',
@@ -50,7 +52,7 @@ Trip.init(
     },
     post_id: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      allowNull: true,
       references: {
         model: 'post',
         key: 'id',

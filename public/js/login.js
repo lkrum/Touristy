@@ -27,20 +27,19 @@ console.log("HIT")
 // user sign-up functionality
 const signupFormHandler = async (event) => {
   event.preventDefault();
-
-  const userName = document.querySelector('#name-signup').value.trim();
+  console.log("HIT")
   const email = document.querySelector('#email-signup').value.trim();
   const password = document.querySelector('#password-signup').value.trim();
 
-  if (userName && email && password) {
-    const response = await fetch('/api/users', {
+  if (email && password) {
+    const response = await fetch('/api/users/login', {
       method: 'POST',
-      body: JSON.stringify({ userName, email, password }),
+      body: JSON.stringify({ email, password }),
       headers: { 'Content-Type': 'application/json' },
     });
 
     if (response.ok) {
-      document.location.replace('/dashboard');
+      document.location.replace('/post');
     } else {
       alert(response.statusText);
     }

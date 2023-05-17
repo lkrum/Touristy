@@ -7,6 +7,7 @@ Post.init(
   {
     id: {
       type: DataTypes.INTEGER,
+      allowNull: false,
       primaryKey: true,
       autoIncrement: true,
     },
@@ -22,22 +23,22 @@ Post.init(
         key: 'id',
       },
     },
-    trip_id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      references: {
-        model: 'trip',
-        key: 'id',
-      },
-    },
-    image_id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      references: {
-        model: 'image',
-        key: 'id',
-      },
-    },
+    // trip_id: {
+    //   type: DataTypes.INTEGER,
+    //   allowNull: false,
+    //   references: {
+    //     model: 'trip',
+    //     key: 'id',
+    //   },
+    // },
+    // image_id: {
+    //   type: DataTypes.INTEGER,
+    //   allowNull: false,
+    //   references: {
+    //     model: 'image',
+    //     key: 'id',
+    //   },
+    // },
   },
   {
     sequelize,

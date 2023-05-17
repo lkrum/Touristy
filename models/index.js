@@ -45,7 +45,7 @@ Image.belongsTo(Post, {
   foreignKey: 'post_id'
 })
 
-Image.hasMany(Post, {
+Image.hasOne(Post, {
   foreignKey: 'post_id'
 })
 

@@ -1,0 +1,72 @@
+[
+  {
+    "filename": "waterfall.jpg",
+    "description": "man standing on a rock in front of a waterfall",
+    "trip_id": 1,
+    "post_id": 1,
+    "user_id": 1
+  },
+  {
+    "filename": "burger.jpg",
+    "description": "burger and fries on a plate",
+    "trip_id": 1,
+    "post_id": 1,
+    "user_id": 1
+  },
+  {
+    "filename": "camera.jpg",
+    "description": "girl behind a camera",
+    "trip_id": 1,
+    "post_id": 2,
+    "user_id": 1
+  },
+  {
+    "filename": "dog.jpg",
+    "description": "white and brown-spotted dog on a beach",
+    "trip_id": 1,
+    "post_id": 2,
+    "user_id": 1
+  },
+  {
+    "filename": "friends.jpg",
+    "description": "group of men sitting on cliffside",
+    "trip_id": 1,
+    "post_id": 3,
+    "user_id": 1
+  },
+  {
+    "filename": "kayak.jpg",
+    "description": "girl sitting in a kayak on a river",
+    "trip_id": 1,
+    "post_id": 4,
+    "user_id": 1
+  },
+  {
+    "filename": "river.jpg",
+    "description": "girl sitting on a rock next to a river",
+    "trip_id": 1,
+    "post_id": 1,
+    "user_id": 1
+  },
+  {
+    "filename": "italy.jpg",
+    "description": "bicycle on Italian street",
+    "trip_id": 1,
+    "post_id": 2,
+    "user_id": 1
+  },
+  {
+    "filename": "paris.jpg",
+    "description": "burger and fries on a plate",
+    "trip_id": 1,
+    "post_id": 3,
+    "user_id": 1
+  },
+  {
+    "filename": "japan.jpg",
+    "description": "road lined with houses in Shirakawa-Go, Japan",
+    "trip_id": 1,
+    "post_id": 3,
+    "user_id": 1
+  }
+]
