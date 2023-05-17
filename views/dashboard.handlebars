@@ -1,37 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Touristy</title>
-  <link rel="stylesheet" href="/css/style.css">
-</head>
-
-<body>
-  <header>
-    <h1>Touristy</h1>
-    <nav>
-      <a href="/">Home</a>
-      {{!-- don't have a bio route yet, will add later --}}
-      <a href="#">Bio</a>
-      {{#if loggedIn}}
-      <button id="logout" class="btn-no-style">Logout</button>
-      {{else}}
-      <a href="/login">Login</a>
-      {{/if}}
-    </nav>
-
-    <section>
+<section>
       <div>
         <div id="ListOfBlogsHeader">
           <h1>List of Blogs</h1>
         </div>
         <div id="blogs">
           <ul>
-            <li>Blog 1</li>
-            <li>Blog 2</li>
-            <li>Blog 3</li>
+            <li><a href="/trip/:id">Blog 1</li></a>
+            <li><a href="/trip/:id"></a>Blog 2</li></a>
+            <li><a href="/trip/:id"></a>Blog 3</li></a>
           </ul>
         </div>
       </div>

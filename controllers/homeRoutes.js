@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Trip, Image, Post } = require('../models');
+const { Trip, Image, Post, User } = require('../models');
 const withAuth = require('../utils/auth');
 
 // GET route for all trips
@@ -20,7 +20,7 @@ router.get('/', withAuth, async (req, res) => {
     const trips = tripData.map((trip) => trip.get({ plain: true }));
 
     // Pass serialized data and session flag into template
-    res.render('homepage', {
+    res.render('dashboard', {
       trips,
       logged_in: req.session.logged_in
     });
@@ -36,7 +36,7 @@ router.get('/trip/:id', withAuth, async (req, res) => {
       include: [
         {
           model: User,
-          attributes: ['name'],
+          attributes: ['username'],
         },
       ],
     });
@@ -54,7 +54,7 @@ router.get('/trip/:id', withAuth, async (req, res) => {
 });
 
 // GET route for all images
-router.get('/image', withAuth, async (req, res) => {
+router.get('/image', async (req, res) => {
   try {
     // Get all image data and JOIN with user data
     const imageData = await Image.findAll({
@@ -63,6 +63,10 @@ router.get('/image', withAuth, async (req, res) => {
           model: User,
           attributes: ['username'],
         },
+        // {
+        //   model: Image,
+        //   attributes: ['filename'],
+        // },
       ],
     });
 
@@ -70,7 +74,7 @@ router.get('/image', withAuth, async (req, res) => {
     const images = imageData.map((image) => image.get({ plain: true }));
 
     // Pass serialized data and session flag into template
-    res.render('image', {
+    res.render('gallery', {
       images,
       logged_in: req.session.logged_in
     });
@@ -86,7 +90,7 @@ router.get('/image/:id', withAuth, async (req, res) => {
       include: [
         {
           model: User,
-          attributes: ['name'],
+          attributes: ['username'],
         },
       ],
     });
@@ -94,7 +98,7 @@ router.get('/image/:id', withAuth, async (req, res) => {
     const image = imageData.get({ plain: true });
 
     // rendering handlebars data
-    res.render('trip', {
+    res.render('gallery', {
       ...image,
       logged_in: req.session.logged_in
     });
@@ -104,7 +108,7 @@ router.get('/image/:id', withAuth, async (req, res) => {
 });
 
 // GET route for all posts
-router.get('/post', withAuth, async (req, res) => {
+router.get('/post', async (req, res) => {
   try {
     // Get all post data and JOIN with user data
     const postData = await Post.findAll({
@@ -112,6 +116,10 @@ router.get('/post', withAuth, async (req, res) => {
         {
           model: User,
           attributes: ['username'],
+        },
+        {
+          model: Image,
+          attributes: ['filename'],
         },
       ],
     });
@@ -136,7 +144,11 @@ router.get('/post/:id', withAuth, async (req, res) => {
       include: [
         {
           model: User,
-          attributes: ['name'],
+          attributes: ['username'],
+        },
+        {
+          model: Image,
+          attributes: ['filename'],
         },
       ],
     });

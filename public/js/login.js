@@ -1,7 +1,7 @@
 // user log in functionality
 const loginFormHandler = async (event) => {
   event.preventDefault();
-
+console.log("HIT")
   // Collect values from the login form
   const email = document.querySelector('#email-login').value.trim();
   const password = document.querySelector('#password-login').value.trim();
@@ -15,10 +15,11 @@ const loginFormHandler = async (event) => {
     });
 
     if (response.ok) {
+      alert("logged IN!")
       // If successful, redirect the browser to the dashboard page
-      document.location.replace('/posts');
+      document.location.replace('/post');
     } else {
-      alert(response.statusText);
+      alert("not logged in");
     }
   }
 };
