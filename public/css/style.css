@@ -44,7 +44,7 @@ nav h1 {
 nav a {
   display: flex;
   justify-content: flex-end;
-  color: var(--light-green);
+  color: var(--white);
   margin: 10px 0;
   text-decoration: none;
 }

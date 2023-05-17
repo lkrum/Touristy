@@ -1,9 +1,10 @@
 const sequelize = require('../config/connection');
-const { User, Post } = require('../models');
+const { User, Post, Image } = require('../models');
 // requiring json and js files
 const userData = require('./userData.json');
 const postData = require('./postData.json');
-const seedImageData = require('./imageData')
+const ImageData = require('./imageData.json');
+const tripData = require('./tripData.json');
 
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
@@ -16,11 +17,20 @@ const seedDatabase = async () => {
   for (const post of postData) {
     await Post.create({
       ...post,
-      user_id: users[Math.floor(Math.random() * users.length)].id,
     });
   }
 
-  await seedImageData();
+  for (const image of ImageData) {
+    await Image.create({
+      ...image,
+    });
+  }
+
+  for (const trip of tripData) {
+    await Trip.create({
+      ...trip,
+    });
+  }
 
   process.exit(0);
 };

@@ -4,14 +4,14 @@ const withAuth = require('../utils/auth');
 
 // GET route for all trips
 // using WithAuth so unauthorized users cannot access data
-router.get('/', withAuth, async (req, res) => {
+router.get('/', async (req, res) => {
   try {
     // Get all trip data and JOIN with user data
     const tripData = await Trip.findAll({
       include: [
         {
           model: User,
-          attributes: ['username'],
+          attributes: ['id'],
         },
       ],
     });
@@ -36,7 +36,7 @@ router.get('/trip/:id', withAuth, async (req, res) => {
       include: [
         {
           model: User,
-          attributes: ['username'],
+          attributes: ['id'],
         },
       ],
     });
@@ -61,7 +61,7 @@ router.get('/image', async (req, res) => {
       include: [
         {
           model: User,
-          attributes: ['username'],
+          attributes: ['id'],
         },
         // {
         //   model: Image,
@@ -90,7 +90,7 @@ router.get('/image/:id', withAuth, async (req, res) => {
       include: [
         {
           model: User,
-          attributes: ['username'],
+          attributes: ['id'],
         },
       ],
     });
@@ -115,7 +115,7 @@ router.get('/post', async (req, res) => {
       include: [
         {
           model: User,
-          attributes: ['username'],
+          attributes: ['id'],
         },
         {
           model: Image,
@@ -144,7 +144,7 @@ router.get('/post/:id', withAuth, async (req, res) => {
       include: [
         {
           model: User,
-          attributes: ['username'],
+          attributes: ['id'],
         },
         {
           model: Image,
