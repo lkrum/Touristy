@@ -36,7 +36,7 @@ router.get('/trip/:id', withAuth, async (req, res) => {
       include: [
         {
           model: User,
-          attributes: ['name'],
+          attributes: ['username'],
         },
       ],
     });
@@ -90,7 +90,7 @@ router.get('/image/:id', withAuth, async (req, res) => {
       include: [
         {
           model: User,
-          attributes: ['name'],
+          attributes: ['username'],
         },
       ],
     });
@@ -117,6 +117,10 @@ router.get('/post', async (req, res) => {
           model: User,
           attributes: ['username'],
         },
+        {
+          model: Image,
+          attributes: ['filename'],
+        },
       ],
     });
 
@@ -140,7 +144,11 @@ router.get('/post/:id', withAuth, async (req, res) => {
       include: [
         {
           model: User,
-          attributes: ['name'],
+          attributes: ['username'],
+        },
+        {
+          model: Image,
+          attributes: ['filename'],
         },
       ],
     });
