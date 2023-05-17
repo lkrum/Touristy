@@ -25,6 +25,7 @@ We used Express, Sequelize, Node, and Handlebars to create our app and Heroku to
 
 - [Handlebars](https://handlebarsjs.com/)
 - [Sequelize Models](https://sequelize.org/docs/v6/core-concepts/model-basics/)
+- [Bootstrap Carousel](https://getbootstrap.com/docs/5.3/components/carousel/)
 
 ## License
 MIT License
