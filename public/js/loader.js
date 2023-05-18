@@ -1,16 +1,14 @@
-import { Loader } from "@googlemaps/js-api-loader"
+// Compile Handlebars template
+const templateSource = document.getElementById('post.handlebars').innerHTML;
+const template = Handlebars.compile(templateSource);
 
-const loader = new Loader({
-    apiKey: "AIzaSyDGcazyPUnW3_lJHSHkHELSVM8T2YwwFUQ",
-    version: "weekly",
-    ...additionalOptions,
-  });
+// Define the data to pass to the template
+const data = {
   
-  loader.load().then(async () => {
-    const { Map } = await google.maps.importLibrary("maps");
-  
-    map = new Map(document.getElementById("map"), {
-      center: { lat: -34.397, lng: 150.644 },
-      zoom: 8,
-    });
-  });
+};
+
+// Render the template with data
+const renderedTemplate = template(data);
+
+// Insert the rendered template into HTML
+document.getElementById('map').innerHTML = renderedTemplate;
