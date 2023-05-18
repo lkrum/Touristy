@@ -2,7 +2,7 @@
 // need function to append blog name to page
 // save the value of the submit form and display it as blog name
 var submitBtn = document.getElementById("submitBtn");
-var listEl = document.querySelector('ul');
+var listEl = document.getElementsByTagName("ul");
 var textInput = ""; 
 
 function createblog(){
