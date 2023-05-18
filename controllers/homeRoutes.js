@@ -3,8 +3,9 @@ const { Trip, Image, Post, User } = require('../models');
 const withAuth = require('../utils/auth');
 
 // GET route for all trips
+// server is what renders handlebars
 // using WithAuth so unauthorized users cannot access data
-router.get('/', async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
   try {
     // Get all trip data and JOIN with user data
     const tripData = await Trip.findAll({
