@@ -55,7 +55,7 @@ router.get('/trip/:id', withAuth, async (req, res) => {
 });
 
 // GET route for all images
-router.get('/image', async (req, res) => {
+router.get('/image', withAuth, async (req, res) => {
   try {
     // Get all image data and JOIN with user data
     const imageData = await Image.findAll({
@@ -109,7 +109,7 @@ router.get('/image/:id', withAuth, async (req, res) => {
 });
 
 // GET route for all posts
-router.get('/post', async (req, res) => {
+router.get('/post', withAuth, async (req, res) => {
   try {
     // Get all post data and JOIN with user data
     const postData = await Post.findAll({
