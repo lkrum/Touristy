@@ -65,15 +65,15 @@ router.delete('/:id', withAuth, async (req, res) => {
 });
 
 // mapbox api key
-const accessToken = 'pk.eyJ1Ijoia2VsY2xhcmsiLCJhIjoiY2xoc2luYmI2Mnk1azNnczZrdmgwbmhheCJ9.pftHqj4EZsWsO0HOlvrSOg';
+// const accessToken = 'pk.eyJ1Ijoia2VsY2xhcmsiLCJhIjoiY2xoc2luYmI2Mnk1azNnczZrdmgwbmhheCJ9.pftHqj4EZsWsO0HOlvrSOg';
 
-// Initialize map
-mapboxgl.accessToken = accessToken;
-const map = new mapboxgl.Map({
-  container: 'map',
-  style: 'mapbox://styles/mapbox/streets-v11',
-  center: [-34.397, 150.644],
-  zoom: 8, 
-});
+// // Initialize map
+// mapboxgl.accessToken = accessToken;
+// const map = new mapboxgl.Map({
+//   container: 'map',
+//   style: 'mapbox://styles/mapbox/streets-v11',
+//   center: [-34.397, 150.644],
+//   zoom: 8, 
+// });
 
 module.exports = router;
