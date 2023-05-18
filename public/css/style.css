@@ -27,6 +27,7 @@ body {
 nav {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin-right: 1rem;
   align-items: center;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
@@ -37,7 +38,7 @@ nav h1 {
   justify-content: flex-start;
   color: var(--white);
   margin: 1rem;
-  font-size: 24px;
+  font-size: 30px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
@@ -47,6 +48,7 @@ nav a {
   color: var(--white);
   margin: 10px 0;
   text-decoration: none;
+  font-size: 18px;
 }
 
 nav a:hover {
@@ -150,7 +152,6 @@ section {
 }
 
 footer {
-  position: absolute;
   bottom: 0;
   width: 100%;
   background-color: var(--gray-green);
@@ -160,13 +161,17 @@ footer {
 }
 
 footer ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   list-style-type: none;
   padding: 0;
+  padding-top: 15px;
 }
 
 footer ul li {
   display: inline;
-  margin: 0 10px;
+  margin: 0 30px;
 }
 
 footer a {
