@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Trip, Image, Post, User } = require('../models');
+const { Trip, Image, Blog, User } = require('../models');
 const withAuth = require('../utils/auth');
 
 // GET route for all trips
@@ -109,10 +109,10 @@ router.get('/image/:id', withAuth, async (req, res) => {
 });
 
 // GET route for all posts
-router.get('/post', withAuth, async (req, res) => {
+router.get('/blog', withAuth, async (req, res) => {
   try {
     // Get all post data and JOIN with user data
-    const postData = await Post.findAll({
+    const blogData = await Blog.findAll({
       include: [
         {
           model: User,
@@ -126,11 +126,11 @@ router.get('/post', withAuth, async (req, res) => {
     });
 
     // Serialize data so the template can read it
-    const posts = postData.map((post) => post.get({ plain: true }));
+    const blogs = blogData.map((blog) => blog.get({ plain: true }));
 
     // Pass serialized data and session flag into template
-    res.render('post', {
-      posts,
+    res.render('blog', {
+      blogs,
       logged_in: req.session.logged_in
     });
   } catch (err) {
@@ -139,9 +139,9 @@ router.get('/post', withAuth, async (req, res) => {
 });
 
 // GET route for posts by id
-router.get('/post/:id', withAuth, async (req, res) => {
+router.get('/blog/:id', withAuth, async (req, res) => {
   try {
-    const postData = await Post.findByPk(req.params.id, {
+    const blogData = await Blog.findByPk(req.params.id, {
       include: [
         {
           model: User,
@@ -154,11 +154,11 @@ router.get('/post/:id', withAuth, async (req, res) => {
       ],
     });
 
-    const post = postData.get({ plain: true });
+    const blog = blogData.get({ plain: true });
 
     // rendering handlebars data
-    res.render('post', {
-      ...post,
+    res.render('blog', {
+      ...blog,
       logged_in: req.session.logged_in
     });
   } catch (err) {

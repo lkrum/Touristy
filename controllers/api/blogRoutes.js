@@ -2,6 +2,8 @@ const router = require('express').Router();
 const { Post } = require('../../models');
 const withAuth = require('../../utils/auth');
 
+
+
 // route for adding a new post
 // using fetch to make post request, 
 router.post('/', async (req, res) => {
