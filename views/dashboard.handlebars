@@ -1,20 +1,30 @@
 <section>
-      <div>
-        <div id="ListOfBlogsHeader">
-          <h1>List of Blogs</h1>
-        </div>
-        <div id="blogs">
-          <ul>
-            <li><a href="/trip/:id">Blog 1</li></a>
-            <li><a href="/trip/:id"></a>Blog 2</li></a>
-            <li><a href="/trip/:id"></a>Blog 3</li></a>
-          </ul>
-        </div>
-      </div>
-    </section>
+  <div>
+    <div id="ListOfBlogsHeader">
+      <h1>List of Blogs</h1>
+    </div>
+<section>
 
-    {{!-- {{#if loggedIn}}
-    <script src="/js/logout.js"></script> --}}
+      <form>
+        <div class="form-group">
+          <label for="blog">Add Blog</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+            placeholder="Name of Blog">
+        </div>
+        <button type="submit" class="btn btn-primary" id="submitBtn">Submit</button>
+      </form>
+
+    
+      <div id="blogs">
+        <ul>
+          <li><a href="/trip/:id">Blog 1</li></a>
+          <li><a href="/trip/:id"></a>Blog 2</li></a>
+          <li><a href="/trip/:id"></a>Blog 3</li></a>
+        </ul>
+      </div>
+  </div>
+</section>
+
 </body>
 
 </html>
