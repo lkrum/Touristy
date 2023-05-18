@@ -1,7 +1,6 @@
 // user log in functionality
 const loginFormHandler = async (event) => {
   event.preventDefault();
-console.log("HIT")
   // Collect values from the login form
   const email = document.querySelector('#email-login').value.trim();
   const password = document.querySelector('#password-login').value.trim();
@@ -15,9 +14,8 @@ console.log("HIT")
     });
 
     if (response.ok) {
-      alert("logged IN!")
       // If successful, redirect the browser to the dashboard page
-      document.location.replace('/post');
+      document.location.replace('/');
     } else {
       alert("not logged in");
     }
@@ -27,7 +25,6 @@ console.log("HIT")
 // user sign-up functionality
 const signupFormHandler = async (event) => {
   event.preventDefault();
-  console.log("HIT")
   const email = document.querySelector('#email-signup').value.trim();
   const password = document.querySelector('#password-signup').value.trim();
 
@@ -39,7 +36,7 @@ const signupFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace('/post');
+      document.location.replace('/');
     } else {
       alert(response.statusText);
     }

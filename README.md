@@ -1,10 +1,10 @@
 # Touristy
-Walker Logan, Leah Krumholz, Kelly Clark, and Amari Johnson have created a travel blog where users can create image galleries and posts for each of their trips. 
+Walker Logan, Leah Krumholz, Kelly Clark, and Amari Johnson have created a travel blog.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Description 
-Share your vacation adventures with friends, family, and strangers through a simple photo blogging app. Follow users to stay up to date on their latest excursions, and like and comment posts to show your reactions. 
+Share your vacation adventures with friends, family, and strangers through a simple photo blogging app. Create an account, log in, and view galleries of your users' recent trips. 
 
 Link to deployed app: 
 
@@ -18,7 +18,10 @@ OR
 4. Run `npm i` to install the necessary applications 
 
 ## Usage
-1. 
+1. Create an account with a unique email
+2. Log in with your newly created account credentials\
+**Note**: You will not be able to view any pages without being logged in
+3. Navigate to other pages through the links in the navigation bar
 
 ## Credits 
 We used Express, Sequelize, Node, and Handlebars to create our app and Heroku to deploy it publically.
