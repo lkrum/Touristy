@@ -20,7 +20,7 @@ body {
 }
 
 .header {
-  background-color: var(--dark-green);
+  background-color: var(--gray-green);
   position: sticky;
   top: 0;
   z-index: 1;
@@ -51,6 +51,7 @@ nav a {
   margin: 10px 0;
   text-decoration: none;
   font-size: 18px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 nav a:hover {
@@ -64,10 +65,7 @@ nav a:hover {
   color: var(--white);
   cursor: pointer;
   text-decoration: underline;
-}
-
-.btn-no-style:hover {
-  color: var(--mid-green);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .row {
@@ -88,6 +86,7 @@ nav a:hover {
 
 h1 {
   margin-left: 30px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 h2 {
@@ -174,6 +173,12 @@ h3 {
   color: var(--white);
   padding: 20px;
   margin-bottom: 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+#post-section {
+  border: 1px var(--white) solid;
+  border-radius: 20px;
 }
 
 #image-gallery {
