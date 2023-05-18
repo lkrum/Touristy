@@ -1,7 +1,7 @@
 const User = require('./user');
 const Trip = require('./trip');
 const Image = require('./image');
-const Post = require('./post');
+const Blog = require('./blog');
 
 // user relationships
 User.hasMany(Trip, {
@@ -14,7 +14,7 @@ User.hasMany(Image, {
   onDelete: 'CASCADE'
 });
 
-User.hasMany(Post, {
+User.hasMany(Blog, {
   foreignKey: 'user_id',
   onDelete: 'CASCADE'
 });
@@ -28,8 +28,8 @@ Trip.hasMany(Image, {
   foreignKey: 'image_id'
 });
 
-Trip.hasMany(Post, {
-  foreignKey: 'post_id'
+Trip.hasMany(Blog, {
+  foreignKey: 'blog_id'
 });
 
 // image relationships
@@ -41,25 +41,25 @@ Image.belongsTo(Trip, {
   foreignKey: 'trip_id'
 });
 
-Image.belongsTo(Post, {
-  foreignKey: 'post_id'
+Image.belongsTo(Blog, {
+  foreignKey: 'blog_id'
 })
 
-Image.hasOne(Post, {
-  foreignKey: 'post_id'
+Image.hasOne(Blog, {
+  foreignKey: 'blog_id'
 })
 
-// post relationships
-Post.belongsTo(User, {
+// blog relationships
+Blog.belongsTo(User, {
   foreignKey: 'user_id'
 });
 
-Post.belongsTo(Trip, {
+Blog.belongsTo(Trip, {
   foreignKey: 'trip_id'
 })
 
-Post.hasOne(Image, {
+Blog.hasOne(Image, {
   foreignKey: 'image_id'
 })
 
-module.exports = { User, Trip, Image, Post };
+module.exports = { User, Trip, Image, Blog };

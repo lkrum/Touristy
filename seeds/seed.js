@@ -2,7 +2,7 @@ const sequelize = require('../config/connection');
 const { User, Post, Image } = require('../models');
 // requiring json and js files
 const userData = require('./userData.json');
-const postData = require('./postData.json');
+const blogData = require('./blogData.json');
 const ImageData = require('./imageData.json');
 const tripData = require('./tripData.json');
 
@@ -14,9 +14,9 @@ const seedDatabase = async () => {
     returning: true,
   });
 
-  for (const post of postData) {
-    await Post.create({
-      ...post,
+  for (const blog of blogData) {
+    await Blog.create({
+      ...blog,
     });
   }
 
