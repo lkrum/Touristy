@@ -4,7 +4,7 @@ Walker Logan, Leah Krumholz, Kelly Clark, and Amari Johnson have created a trave
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Description 
-Share your vacation adventures with friends, family, and strangers through a simple photo blogging app. Create an account, log in, and view galleries of your users' recent trips. 
+Share your vacation adventures with friends, family, and strangers through a simple photo blogging app. Create an account and log in to create blogs, read blog posts, and view image galleries of your users' recent trips. 
 
 This group project challenged us to use Handlebars for the first time outside of a class activity, navigate different routes, require login authentification, and save session data to track users. One of our main challenges was working collaboratively and distributing work evenly.
 
@@ -24,6 +24,10 @@ OR
 2. Log in with your newly created account credentials\
 **Note**: You will not be able to view any pages without being logged in
 3. Navigate to other pages through the links in the navigation bar
+4. Submit a blog using the form on the home page
+5. Click the blog links on the home page to be taken to the individual blog page
+6. Click on the Image Gallery link to be taken to the image gallery
+7. Click on the logout button in the navigation bar to log out
 
 ## Credits 
 We used Express, Sequelize, MySQL2, Node, and Handlebars to create our app and Heroku to deploy it publically.
@@ -33,6 +37,7 @@ We used Express, Sequelize, MySQL2, Node, and Handlebars to create our app and H
 - [Bootstrap Carousel](https://getbootstrap.com/docs/5.3/components/carousel/)
 - [Material Design for Bootstrap](https://mdbootstrap.com/)
 - [JQuery](https://api.jquery.com/)
+- [Unsplash](https://unsplash.com/) for all stock photos
 
 ## License
 MIT License
