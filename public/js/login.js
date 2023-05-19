@@ -15,6 +15,7 @@ const loginFormHandler = async (event) => {
 
     if (response.ok) {
       // If successful, redirect the browser to the dashboard page
+      alert("logged in")
       document.location.replace('/');
     } else {
       alert("not logged in");
@@ -36,7 +37,8 @@ const signupFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace('/');
+      alert("sign up successful")
+      document.location.replace('/login');
     } else {
       alert(response.statusText);
     }

@@ -5,54 +5,54 @@ const withAuth = require('../utils/auth');
 // GET route for all trips
 // server is what renders handlebars
 // using WithAuth so unauthorized users cannot access data
-router.get('/', withAuth, async (req, res) => {
-  try {
-    // Get all trip data and JOIN with user data
-    const tripData = await Trip.findAll({
-      include: [
-        {
-          model: User,
-          attributes: ['id'],
-        },
-      ],
-    });
+// router.get('/', withAuth, async (req, res) => {
+//   try {
+//     // Get all trip data and JOIN with user data
+//     const tripData = await Trip.findAll({
+//       include: [
+//         {
+//           model: User,
+//           attributes: ['id'],
+//         },
+//       ],
+//     });
 
-    // Serialize data so the template can read it
-    const trips = tripData.map((trip) => trip.get({ plain: true }));
+//     // Serialize data so the template can read it
+//     const trips = tripData.map((trip) => trip.get({ plain: true }));
 
-    // Pass serialized data and session flag into template
-    res.render('dashboard', {
-      trips,
-      logged_in: req.session.logged_in
-    });
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
+//     // Pass serialized data and session flag into template
+//     res.render('dashboard', {
+//       trips,
+//       logged_in: req.session.logged_in
+//     });
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
 
-// GET route for trips by id
-router.get('/trip/:id', withAuth, async (req, res) => {
-  try {
-    const tripData = await Trip.findByPk(req.params.id, {
-      include: [
-        {
-          model: User,
-          attributes: ['id'],
-        },
-      ],
-    });
+// // GET route for trips by id
+// router.get('/trip/:id', withAuth, async (req, res) => {
+//   try {
+//     const tripData = await Trip.findByPk(req.params.id, {
+//       include: [
+//         {
+//           model: User,
+//           attributes: ['id'],
+//         },
+//       ],
+//     });
 
-    const trip = tripData.get({ plain: true });
+//     const trip = tripData.get({ plain: true });
 
-    // rendering handlebars data
-    res.render('trip', {
-      ...trip,
-      logged_in: req.session.logged_in
-    });
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
+//     // rendering handlebars data
+//     res.render('trip', {
+//       ...trip,
+//       logged_in: req.session.logged_in
+//     });
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
 
 // GET route for all images
 router.get('/image', withAuth, async (req, res) => {
@@ -64,10 +64,6 @@ router.get('/image', withAuth, async (req, res) => {
           model: User,
           attributes: ['id'],
         },
-        // {
-        //   model: Image,
-        //   attributes: ['filename'],
-        // },
       ],
     });
 
@@ -108,8 +104,8 @@ router.get('/image/:id', withAuth, async (req, res) => {
   }
 });
 
-// GET route for all posts
-router.get('/blog', withAuth, async (req, res) => {
+// GET route for all blogs
+router.get('/', withAuth, async (req, res) => {
   try {
     // Get all post data and JOIN with user data
     const blogData = await Blog.findAll({
@@ -129,7 +125,7 @@ router.get('/blog', withAuth, async (req, res) => {
     const blogs = blogData.map((blog) => blog.get({ plain: true }));
 
     // Pass serialized data and session flag into template
-    res.render('blog', {
+    res.render('dashboard', {
       blogs,
       logged_in: req.session.logged_in
     });

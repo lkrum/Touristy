@@ -1,28 +1,27 @@
 const router = require('express').Router();
-const { Post } = require('../../models');
+const { Blog } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 
-
-// route for adding a new post
-// using fetch to make post request, 
+// route for adding a new blog
+// using fetch to make blog request, 
 router.post('/', async (req, res) => {
   try {
-    const newPost = await Post.create({
+    const newBlog = await Blog.create({
       ...req.body,
       user_id: req.session.user_id,
     });
 
-    res.status(200).json(newPost);
+    res.status(200).json(newBlog);
   } catch (err) {
     res.status(400).json(err);
   }
 });
 
-// route for updating a post by id
+// route for updating a blog by id
 router.put('/:id', async (req, res) => {
   try {
-    const postData = await Post.update(
+    const blogData = await Blog.update(
       {
         // all of the info that a user could update
         description: req.body.description,
@@ -35,32 +34,32 @@ router.put('/:id', async (req, res) => {
       }
     )
     // have to start index at 0 even though our ids start at 1 because that's how Javascript indexes
-    if (!postData[0]) {
-      res.status(404).json({ message: 'No post found with this id!' });
+    if (!blogData[0]) {
+      res.status(404).json({ message: 'No blog found with this id!' });
       return;
     }
-    res.status(200).json(postData);
+    res.status(200).json(blogData);
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
-// route for deleting a trip by id
+// route for deleting a blog by id
 router.delete('/:id', withAuth, async (req, res) => {
   try {
-    const postData = await Post.destroy({
+    const blogData = await Blog.destroy({
       where: {
         id: req.params.id,
         user_id: req.session.user_id,
       },
     });
 
-    if (!postData) {
-      res.status(404).json({ message: 'No post found with this id!' });
+    if (!blogData) {
+      res.status(404).json({ message: 'No blog found with this id!' });
       return;
     }
 
-    res.status(200).json(postData);
+    res.status(200).json(blogData);
   } catch (err) {
     res.status(500).json(err);
   }

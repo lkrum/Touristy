@@ -6,7 +6,7 @@ Walker Logan, Leah Krumholz, Kelly Clark, and Amari Johnson have created a trave
 ## Description 
 Share your vacation adventures with friends, family, and strangers through a simple photo blogging app. Create an account, log in, and view galleries of your users' recent trips. 
 
-Link to deployed app: 
+Link to deployed app: https://git.heroku.com/touristy-app.git
 
 ![Preview image]()
 
