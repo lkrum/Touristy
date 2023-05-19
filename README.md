@@ -33,6 +33,7 @@ We used Express, Sequelize, MySQL2, Node, and Handlebars to create our app and H
 - [Bootstrap Carousel](https://getbootstrap.com/docs/5.3/components/carousel/)
 - [Material Design for Bootstrap](https://mdbootstrap.com/)
 - [JQuery](https://api.jquery.com/)
+- [Unsplash](https://unsplash.com/) for all stock photos
 
 ## License
 MIT License
