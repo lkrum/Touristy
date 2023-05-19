@@ -6,9 +6,11 @@ Walker Logan, Leah Krumholz, Kelly Clark, and Amari Johnson have created a trave
 ## Description 
 Share your vacation adventures with friends, family, and strangers through a simple photo blogging app. Create an account, log in, and view galleries of your users' recent trips. 
 
+This group project challenged us to use Handlebars for the first time outside of a class activity, navigate different routes, require login authentification, and save session data to track users. One of our main challenges was working collaboratively and distributing work evenly.
+
 Link to deployed app: https://git.heroku.com/touristy-app.git
 
-![Preview image]()
+![Preview image](/public/images/Screenshot%202023-05-18%20at%2010.23.58%20PM.png)
 
 ## Installation
 1. Copy the SSH key in my GitHub repo and paste `git clone <SSHKEY>` in your terminal to create a local copy on your computer\
@@ -24,12 +26,13 @@ OR
 3. Navigate to other pages through the links in the navigation bar
 
 ## Credits 
-We used Express, Sequelize, Node, and Handlebars to create our app and Heroku to deploy it publically.
+We used Express, Sequelize, MySQL2, Node, and Handlebars to create our app and Heroku to deploy it publically.
 
 - [Handlebars](https://handlebarsjs.com/)
 - [Sequelize Models](https://sequelize.org/docs/v6/core-concepts/model-basics/)
 - [Bootstrap Carousel](https://getbootstrap.com/docs/5.3/components/carousel/)
 - [Material Design for Bootstrap](https://mdbootstrap.com/)
+- [JQuery](https://api.jquery.com/)
 
 ## License
 MIT License
