@@ -218,6 +218,11 @@ footer ul li {
   margin: 0 30px;
 }
 
+#blogList {
+  font-size: 20px;
+  color: white;
+}
+
 footer a {
   color: var(--white);
   text-decoration: none;

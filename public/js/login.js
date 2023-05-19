@@ -15,6 +15,7 @@ const loginFormHandler = async (event) => {
 
     if (response.ok) {
       // If successful, redirect the browser to the dashboard page
+      alert("logged in")
       document.location.replace('/');
     } else {
       alert("not logged in");
