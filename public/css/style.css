@@ -6,6 +6,8 @@
   --white: rgb(243, 243, 243);
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+
 body {
   display: flex;
   flex-direction: column;
@@ -15,7 +17,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
-  background-color: var(--dark-green);
+  background-color: #333;
   line-height: 1.6;
 }
 
@@ -24,6 +26,8 @@ body {
   position: sticky;
   top: 0;
   z-index: 1;
+  border: 20px #333 solid;
+  border-radius: 20px;
 }
 
 nav {
@@ -32,7 +36,6 @@ nav {
   align-items: center;
   margin-right: 1rem;
   align-items: center;
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
 }
 
 nav h1 {
@@ -69,9 +72,9 @@ nav a:hover {
 }
 
 .row {
+  display: flex;
   margin: 4rem;
   padding: 0;
-  display: flex;
   flex-direction: column;
 }
 
@@ -84,15 +87,22 @@ nav a:hover {
   margin-bottom: 20px;
 }
 
-h1 {
-  margin-left: 30px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+#blog-title {
+  padding: 2rem;
 }
 
 h2 {
   text-align: center;
   color: var(--white);
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+h4 {
+  padding: 15px;
+  color: var(--white);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-family: 'Dancing Script', cursive;
+  font-size: 20px;
 }
 
 .form {
@@ -135,6 +145,17 @@ h2 {
   margin-left: 10px;
 }
 
+.btn-primary {
+  text-decoration: none;
+  background-color: var(--light-green);
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  text-transform: uppercase;
+  font-weight: bold;
+  width: 100%;
+}
+
 .btn-primary:hover {
   background-color: var(--mid-green);
 }
@@ -150,6 +171,10 @@ h2 {
   list-style: none;
   margin: 20px;
   padding: 30px;
+}
+
+a {
+  text-decoration: none;
 }
 
 /* post css */
@@ -177,14 +202,27 @@ h3 {
 }
 
 #post-section {
+  margin: 20px;
   border: 1px var(--white) solid;
   border-radius: 20px;
+}
+
+.card-body {
+  background-color: #515151;
+  border-radius: 20px;
+  color: var(--white);
 }
 
 #image-gallery {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.card {
+  background-color: rgba(255, 255, 255, 0.829);
+  margin: 20px;
+  padding: 10px;
 }
 
 .button {
@@ -265,6 +303,7 @@ footer a:hover {
   #map {
     height: 100%;
   }
+
   html,
   body {
     height: 100%;
