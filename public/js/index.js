@@ -12,7 +12,9 @@ listEl.appendChild(blog)
 const title = document.querySelector('input').value;
 // fetch request for creating a blog
   if (title) {
-    const response = await fetch(`/api/blog`, {
+    // const response = await fetch(`/api/blog`, { ???????????
+    const response = fetch(`/api/blog`, {
+
       method: 'POST',
       body: JSON.stringify({ title }),
       headers: {
@@ -49,4 +51,12 @@ createblog();
 
 // return `<li><a href="/trip/${id}>${name}</li></a>`
 
+
+// get routes on insomnia finished
+// sequelize blogs.findall
+// add another blog to pass the id using get function
+// passing where attribute (pass in object add key value pair --- id column, reqs params.id)
+// update and post
+
+// fetch, then, catch
 
