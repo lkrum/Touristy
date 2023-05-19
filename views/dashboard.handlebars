@@ -1,7 +1,7 @@
 <section>
   <div>
     <div id="ListOfBlogsHeader">
-      <h1>List of Blogs</h1>
+      <h1 id="blog-title">My Blogs</h1>
     </div>
 <section>
 
@@ -22,6 +22,31 @@
       </div>
   </div>
 </section>
+<script>
+  window.onload = function() {
+    var blogs = JSON.parse(localStorage.getItem('blogs')) || [];
+    var blogList = document.getElementById('blogList');
+    for (var i = 0; i < blogs.length; i++) {
+      var newListItem = document.createElement('li');
+      var newLink = document.createElement('a');
+      newLink.href = "/blog";
+      newLink.innerText = blogs[i];
+      newListItem.appendChild(newLink);
+      blogList.appendChild(newListItem);
+    }
+  }
+
+  var form = document.querySelector('form');
+
+  form.addEventListener('submit', function(event) {
+    event.preventDefault();
+    var input = document.getElementById('inputBlog');
+    var blogs = JSON.parse(localStorage.getItem('blogs')) || [];
+    blogs.push(input.value);
+    localStorage.setItem('blogs', JSON.stringify(blogs));
+    location.reload();
+  });
+</script>
 
 </body>
 
