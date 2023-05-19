@@ -37,8 +37,7 @@ const signupFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      alert("sign up successful")
-      document.location.replace('/login');
+      document.location.replace('/');
     } else {
       alert(response.statusText);
     }
