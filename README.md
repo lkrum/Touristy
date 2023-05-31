@@ -8,7 +8,7 @@ Share your vacation adventures with friends, family, and strangers through a sim
 
 This group project challenged us to use Handlebars for the first time outside of a class activity, navigate different routes, require login authentification, and save session data to track users. One of our main challenges was working collaboratively and distributing work evenly.
 
-Link to deployed app: [https://git.heroku.com/touristy-app.git](https://touristy-app.herokuapp.com/login)
+Link to deployed app: https://touristy-app.herokuapp.com/login
 
 ![Preview image](/public/images/Screenshot%202023-05-18%20at%2010.23.58%20PM.png)
 
